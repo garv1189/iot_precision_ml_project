@@ -1,0 +1,48 @@
+In Terminal 1
+    1.Create an environment for project
+    python -m venv new-venv
+    venv\Scripts\activate
+
+    2.Install dependencies
+    pip install pandas numpy scikit-learn paho-mqtt joblib flask gunicorn plotly
+
+    3.Now show the installed packages
+        pip show numpy
+        pip show flask
+
+    3.Run files in correct order
+        To generate iot data for ml model,preprocess it,do feature engineering and model building
+            python generate_iot_data.py
+            python preprocess_data.py
+            python feature_engineering.py
+            python train_model.py
+
+        To start publishing data as an iot device
+            python iot_device_simulator.py
+
+Open another Terminal and start live prediction for model
+
+    In the same environment start live prediction using command:
+        python live_iot_prediction.py
+
+Open another Terminal to start our app.py and un it locally on our local host
+
+    1.deactivate current environment:
+        deactivate
+
+    2.Create a new environment:
+        python -m venv my-new-venv
+        my-new-venv\Scripts\activate
+
+        pip install flask pandas scikit-learn paho-mqtt plotly
+
+    3.Show downloaded packages
+        pip show numpy
+        pip show flask
+        pip list
+
+    3.start your app.py file:
+        python app.py
+
+      then start the project by clicking the link(Running on http://127.0.0.1:5000)
+
